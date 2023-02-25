@@ -24,7 +24,7 @@ const ExpenseForm = (props) => {
     //   return { ...prevState, enteredTitle: event.terget.value };
     // });
   };
-  const amuntChangeHandler = (event) => {
+  const amountChangeHandler = (event) => {
     // console.log(event);
     setEnteredAmount(event.target.value);
 
@@ -37,10 +37,8 @@ const ExpenseForm = (props) => {
     // });
   };
   const dateChangeHandler = (event) => {
-    // console.log(new Date(event.target.value));
-    // let selectedDate = new Date(event.target.value);
-    // console.log(selectedDate);
-    setEnteredDate(new Date(event.target.value));
+    // console.log(event);
+    setEnteredDate(event.target.value);
 
     // setUserInput({
     //   ...setUserInput,
@@ -56,7 +54,7 @@ const ExpenseForm = (props) => {
     const expenseData = {
       title: enteredTitle,
       amount: enteredAmount,
-      date: enteredDate,
+      date: new Date(enteredDate),
     };
     console.log(expenseData);
     props.onSaveExpenseData(expenseData);
@@ -82,7 +80,7 @@ const ExpenseForm = (props) => {
             min="0.01"
             step="0.01"
             value={enteredAmount}
-            onChange={amuntChangeHandler}
+            onChange={amountChangeHandler}
           />
         </div>
         <div className="new-expense__control">
