@@ -37,7 +37,9 @@ const ExpenseForm = (props) => {
     // });
   };
   const dateChangeHandler = (event) => {
-    // console.log(event);
+    // console.log(new Date(event.target.value));
+    // let selectedDate = new Date(event.target.value);
+    // console.log(selectedDate);
     setEnteredDate(new Date(event.target.value));
 
     // setUserInput({
